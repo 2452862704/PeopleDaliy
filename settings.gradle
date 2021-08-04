@@ -1,2 +1,4 @@
 rootProject.name = "PeopleDaliy"
 include ':app'
+include ':FlycoTabLayout'
+include ':emoji'

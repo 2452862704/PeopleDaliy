@@ -3,8 +3,27 @@
     package="com.example.peopledaliy">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA"></uses-permission>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"></uses-permission>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-feature android:name="android.hardware.Camera"/>
+    <uses-feature android:name="android.hardware.camera.autofocus" />
     <application
+        android:resizeableActivity="true"
+        android:usesCleartextTraffic="true"
+        android:configChanges="orientation|screenSize|screenLayout"
         android:name=".App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -12,18 +31,36 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".test.TestActivity">
+
+        <provider
+            android:exported="false"
+            android:grantUriPermissions="true"
+            android:authorities="com.example.peopledaliy.camera_file"
+            android:name="androidx.core.content.FileProvider">
+            <meta-data
+                android:resource="@xml/camera_file"
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                ></meta-data>
+        </provider>
+        <activity android:name=".mvp.view.news.NewsValuesActivity"></activity>
+        <activity android:name=".mvp.base.view.BaseAcyivity"></activity>
+        <activity android:name=".widget.PhotoActivity"></activity>
+        <activity android:name=".mvp.view.user.UserNameActivity"></activity>
+        <activity android:name=".mvp.view.user.HeadActivity"></activity>
+        <activity android:name=".test.TestActivity" />
+        <activity android:name=".mvp.view.user.UserActivity" />
+        <activity android:name=".mvp.view.FrameActivity" />
+        <activity android:name=".MainActivity"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".mvp.view.user.UserActivity" />
-        <activity android:name=".mvp.view.FrameActivity" />
-        <activity android:name=".MainActivity">
-
-        </activity>
+        <meta-data
+            android:name="UMENG_CHANNEL"
+            android:value="${UMENG_CHANNEL}" />
     </application>
 
 </manifest>

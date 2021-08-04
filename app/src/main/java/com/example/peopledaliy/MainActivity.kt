@@ -1,5 +1,6 @@
 package com.example.peopledaliy
 
+import android.Manifest
 import android.content.Intent
 import android.os.Handler
 import android.os.Message
@@ -26,6 +27,9 @@ class MainActivity : BaseAcyivity<SplashPresenter>(),SplashContract.ISplashView 
     }
 
     override fun bindLayout(): Int {
+        requestPermissions(
+            arrayOf(
+                Manifest.permission.READ_PHONE_STATE),100)
         return R.layout.activity_main
     }
 
@@ -43,7 +47,6 @@ class MainActivity : BaseAcyivity<SplashPresenter>(),SplashContract.ISplashView 
     }
 
     override fun refresh() {
-//        TimerThread(TimerHandler(this)).start()
         handler.sendEmptyMessageDelayed(HANDLER_MSG,1500)
     }
 
@@ -53,8 +56,5 @@ class MainActivity : BaseAcyivity<SplashPresenter>(),SplashContract.ISplashView 
         handler.removeCallbacksAndMessages(null)
     }
 
-//    override fun callBack() {
-//        startPage(FirstActivity::class.java)
-//        this.finish()
-//    }
+
 }

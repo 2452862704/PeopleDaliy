@@ -17,7 +17,6 @@ class SplashModel  @Inject constructor():BaseModel(), SplashContract.ISplashMode
             .factory(HttpType.SIGNTYPE)!!
             .getRetrofit()!!.create(Api::class.java)
             .requestToken(createBody(map))
-
         return ob.map<BaseEntity>(ChangeFunction<ToKenEntity>())!!
     }
 }

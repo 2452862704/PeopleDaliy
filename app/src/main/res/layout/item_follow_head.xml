@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="81dp"
+    android:layout_height="100dp">
+    <RelativeLayout
+        android:layout_width="81dp"
+        android:layout_height="100dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="全部关注sadsadsad"
+            android:id="@+id/follow_item_tv"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:maxEms="5"
+            android:singleLine="true"
+            android:ellipsize="end"/>
+        <ImageView
+            android:id="@+id/follow_item_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="3dp"
+            android:layout_above="@id/follow_item_tv"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/res_7icon_122"
+            android:background="@drawable/follow_bg" />
+    </RelativeLayout>
+</LinearLayout>

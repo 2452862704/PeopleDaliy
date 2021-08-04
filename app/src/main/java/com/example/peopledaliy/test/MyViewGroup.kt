@@ -14,23 +14,6 @@ class MyViewGroup:ListView {
     override fun onLayout(changed: Boolean, l: Int, t: Int, r: Int, b: Int) {
         super.onLayout(changed, l, t, r, b)
     }
-
-    fun isBottom():Boolean{
-        val firstVisiblePosition = firstVisiblePosition//屏幕上显示的第一条是list中的第几条
-        val childcount = childCount //屏幕上显示多少条item
-        val totalItemCount = count //一共有多少条
-        if ((firstVisiblePosition+childcount)>=totalItemCount){
-            return true
-        }
-        return false
-    }
-    fun isTop():Boolean{
-        val firstVisiblePosition = firstVisiblePosition//屏幕上显示的第一条是list中的第几条
-        if (firstVisiblePosition==0){
-            return true
-        }
-        return false
-    }
     var touch=0f
     override fun dispatchTouchEvent(ev: MotionEvent?): Boolean {
         //重点在这里

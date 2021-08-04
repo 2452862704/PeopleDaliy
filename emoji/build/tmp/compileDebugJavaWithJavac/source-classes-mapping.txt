@@ -1,0 +1,19 @@
+com/tb/emoji/Emoji.java
+ com.tb.emoji.Emoji
+com/tb/emoji/EmojiUtil.java
+ com.tb.emoji.EmojiUtil
+com/tb/emoji/RecentEmojiManager.java
+ com.tb.emoji.RecentEmojiManager
+com/tb/emoji/BuildConfig.java
+ com.tb.emoji.BuildConfig
+com/tb/emoji/EmojiIndicatorView.java
+ com.tb.emoji.EmojiIndicatorView
+ com.tb.emoji.EmojiIndicatorView$1
+com/tb/emoji/FaceFragment.java
+ com.tb.emoji.FaceFragment
+ com.tb.emoji.FaceFragment$1
+ com.tb.emoji.FaceFragment$2
+ com.tb.emoji.FaceFragment$FaceGVAdapter
+ com.tb.emoji.FaceFragment$FaceGVAdapter$ViewHolder
+ com.tb.emoji.FaceFragment$FaceVPAdapter
+ com.tb.emoji.FaceFragment$OnEmojiClickListener

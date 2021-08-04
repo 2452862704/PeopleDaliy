@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="100dp">
+
+    <RelativeLayout
+        android:layout_width="81dp"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="全部关注sdsadsa"
+            android:id="@+id/follow_all"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:maxEms="5"
+            android:singleLine="true"
+            android:ellipsize="end" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="3dp"
+            android:layout_above="@id/follow_all"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/res_7icon_122"
+            android:background="@drawable/follow_bg" />
+
+    </RelativeLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/follow_author_rv"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        />
+</LinearLayout>

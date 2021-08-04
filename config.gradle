@@ -27,6 +27,13 @@ ext{
             "y_divideritemdecoration"     :  'com.yanyusong.y_divideritemdecoration:y_divideritemdecoration:2.0',
             "greendao"     :  'org.greenrobot:greendao:3.3.0',
             "glide"     :  'com.github.bumptech.glide:glide:4.9.0',
-            transformations: 'jp.wasabeef:glide-transformations:4.0.1'
+            "transformations": 'jp.wasabeef:glide-transformations:4.0.1',
+            "banner": 'com.youth.banner:banner:2.1.0',
+            material :'com.google.android.material:material:1.1.0',
+            refresh:'com.scwang.smart:refresh-layout-kernel:2.0.3',
+            refreshheader:'com.scwang.smart:refresh-header-classics:2.0.3',
+            junit :'junit:junit:4.+',
+            junit1 : 'androidx.test.ext:junit:1.1.1',
+            espresso :'androidx.test.espresso:espresso-core:3.2.0',
     ]
 }

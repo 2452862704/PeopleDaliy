@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:id="@+id/web_values_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/web_values_top"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <include layout="@layout/view_back"/>
+        <ImageView
+            android:layout_width="41dp"
+            android:layout_height="41dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="11dp"
+            android:src="@drawable/ic_more"
+            />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/web_values_bottom_relative"
+        android:layout_alignParentBottom="true"
+        android:paddingLeft="19dp"
+        android:paddingRight="19dp">
+
+        <ImageView
+            android:layout_width="39dp"
+            android:layout_height="39dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/res_7icon_126"
+            android:id="@+id/live_share_img" />
+
+        <ImageView
+            android:layout_width="39dp"
+            android:layout_height="39dp"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/live_share_img"
+            android:layout_marginRight="11dp"
+            android:src="@drawable/res_7icon_128"
+            android:id="@+id/live_collection_img" />
+
+        <RelativeLayout
+            android:layout_width="41dp"
+            android:layout_height="41dp"
+            android:id="@+id/live_msg_relative"
+            android:layout_toLeftOf="@id/live_collection_img"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="11dp">
+            <ImageView
+                android:layout_width="39dp"
+                android:layout_height="39dp"
+                android:src="@drawable/res_7icon_133"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"/>
+            <TextView
+                android:id="@+id/live_msg_num_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:textColor="@color/red"
+                android:textSize="11sp"
+                android:text="935" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/live_edt_btn"
+            android:layout_width="match_parent"
+            android:layout_height="39dp"
+            android:background="@drawable/live_msg_bg"
+            android:layout_toLeftOf="@id/live_msg_relative"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="17dp"
+            android:layout_marginRight="11dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="说两句..."
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="19dp" />
+            <ImageView
+                android:id="@+id/live_face_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="9dp"
+                android:src="@drawable/res_7icon_129"
+                />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_above="@id/web_values_bottom_relative"
+        android:id="@+id/web_values_line"
+        android:background="@color/gray1" />
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/web_values_line"
+        android:layout_below="@id/web_values_top"
+        android:layout_marginTop="2dp">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/web_values_appbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <com.example.peopledaliy.widget.x5.X5WebView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/web_values_x5"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed"/>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/web_values_comment_rv"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:id="@+id/live_bottom_view">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/black"
+            android:alpha="0.5" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/live_bottom_bg"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical"
+            android:paddingLeft="11dp"
+            android:paddingRight="11dp"
+            android:paddingTop="15dp">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="41dp"
+                android:id="@+id/live_msg_edt"
+                android:paddingLeft="11dp"
+                android:hint="优质评论会获得最佳评论人称号"
+                android:background="@color/gray" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginTop="11dp">
+                <TextView
+                    android:layout_width="60dp"
+                    android:layout_height="31dp"
+                    android:text="发表"
+                    android:id="@+id/live_send_tv"
+                    android:gravity="center"
+                    android:background="@drawable/live_send_bg"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true" />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/res_7icon_130"
+                    android:id="@+id/live_voice_img"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/live_voice_img"
+                    android:id="@+id/live_emoji_img"
+                    android:src="@drawable/res_7icon_129"/>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="230dp"
+                android:orientation="vertical"
+                android:visibility="gone"
+                android:id="@+id/live_emoji_linear">
+                <!--                <androidx.recyclerview.widget.RecyclerView-->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:layout_height="@dimen/dp121"-->
+                <!--                    android:id="@+id/live_emoji_rv" />-->
+                <!--                <RelativeLayout-->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:layout_height="@dimen/dp19">-->
+                <!--                    <LinearLayout-->
+                <!--                        android:layout_width="wrap_content"-->
+                <!--                        android:layout_height="wrap_content"-->
+                <!--                        android:orientation="horizontal"-->
+                <!--                        android:layout_centerInParent="true">-->
+                <!--                        <ImageView-->
+                <!--                            android:layout_width="wrap_content"-->
+                <!--                            android:layout_height="wrap_content"-->
+                <!--                            android:src="@drawable/live_circle_black"-->
+                <!--                            android:id="@+id/live_point_img1"-->
+                <!--                            android:layout_marginRight="@dimen/dp5"/>-->
+                <!--                        <ImageView-->
+                <!--                            android:layout_width="wrap_content"-->
+                <!--                            android:layout_height="wrap_content"-->
+                <!--                            android:src="@drawable/live_circle_gray"-->
+                <!--                            android:id="@+id/live_point_img2"-->
+                <!--                            android:layout_marginLeft="@dimen/dp5"/>-->
+                <!--                    </LinearLayout>-->
+
+                <!--                </RelativeLayout>-->
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+</RelativeLayout>

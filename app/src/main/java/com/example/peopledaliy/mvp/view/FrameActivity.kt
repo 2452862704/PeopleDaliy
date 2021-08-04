@@ -76,6 +76,7 @@ class FrameActivity : BaseAcyivity<FramePresenter>(), FrameContract.IFrameView, 
         frame_video_btn!!.setListener(this)
         frame_live_btn!!.setListener(this)
         frame_user_btn!!.setListener(this)
+        showFragment(R.id.frame_news_btn)
     }
 
     override fun initData() {
@@ -94,6 +95,7 @@ class FrameActivity : BaseAcyivity<FramePresenter>(), FrameContract.IFrameView, 
         hideFragment();
         showFragment(id);
     }
+
     fun hideFragment(){
         setStatuesColor(resources.getColor(R.color.white))
         val ft = supportFragmentManager.beginTransaction()
@@ -108,6 +110,9 @@ class FrameActivity : BaseAcyivity<FramePresenter>(), FrameContract.IFrameView, 
         }
         if (videoFragment != null){
             ft.hide(videoFragment!!)
+        }
+        if (liveFragment != null){
+            ft.hide(liveFragment!!)
         }
         ft.commit()
     }

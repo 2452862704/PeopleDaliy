@@ -1,8 +1,11 @@
 package com.example.peopledaliy.mvp.view.user
 
+import android.content.Context
 import android.content.Intent
 import android.view.View
+import android.view.animation.AnimationUtils
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import com.example.peopledaliy.mvp.base.model.BaseEntity
 import com.example.peopledaliy.mvp.base.view.BaseFragment
 import com.example.peopledaliy.mvp.contract.UserContract
@@ -26,7 +29,11 @@ class UserFragment : BaseFragment<UserPresenter>(), UserContract.IUserView, View
 
     override fun initData() {
         start_go!!.setOnClickListener {
-            startActivity(Intent(context,UserActivity::class.java))
+            if (activity!!.getSharedPreferences("user",Context.MODE_PRIVATE).getBoolean("flag",false)){
+                startActivity(Intent(context,HeadActivity::class.java))
+            }else{
+                startActivity(Intent(context,UserActivity::class.java))
+            }
         }
     }
 

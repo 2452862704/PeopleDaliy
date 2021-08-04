@@ -1,7 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/white"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:paddingLeft="11dp"
+    android:paddingRight="11dp">
 
-</FrameLayout>
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <com.google.android.material.appbar.AppBarLayout
+            android:background="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="75dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                app:layout_scrollFlags="scroll|enterAlwaysCollapsed">
+                <ImageView
+                    android:id="@+id/news_icon"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/home_icon_rmrb"
+                    android:layout_centerVertical="true"/>
+                <ImageView
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:id="@+id/news_audio_img"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/res_7icon_123" />
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_toRightOf="@id/news_icon"
+                    android:layout_toLeftOf="@id/news_audio_img"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/news_search_bg"
+                    android:layout_marginLeft="17dp"
+                    android:layout_marginRight="29dp"
+                    android:paddingLeft="11dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/news_search_icon"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/res_7icon_132" />
+                    <com.youth.banner.Banner
+                        android:layout_toRightOf="@id/news_search_icon"
+                        android:layout_marginLeft="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/news_text_banner" />
+                </RelativeLayout>
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="30dp">
+                <ImageView
+                    android:layout_width="35dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:id="@+id/news_more_img"
+                    android:src="@drawable/res_7icon_122" />
+                <com.flyco.tablayout.SlidingTabLayout
+                    android:id="@+id/news_tab"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    app:tl_indicator_corner_radius="1.5dp"
+                    app:tl_indicator_height="3dp"
+                    app:tl_indicator_width="10dp"
+                    app:tl_indicator_color="@color/red"
+                    android:layout_toLeftOf="@id/news_more_img"
+                    app:tl_textUnselectColor="@color/black"
+                    app:tl_textSelectColor="@color/red"
+                    />
+            </RelativeLayout>
+        </com.google.android.material.appbar.AppBarLayout>
+        <androidx.viewpager.widget.ViewPager
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/news_vp"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</LinearLayout>

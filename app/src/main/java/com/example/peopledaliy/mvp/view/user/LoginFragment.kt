@@ -1,18 +1,22 @@
 package com.example.peopledaliy.mvp.view.user
 
+import android.content.Context
 import android.content.Intent
 import android.widget.Button
 import android.widget.EditText
 import android.widget.LinearLayout
-import com.example.peopledaliy.mvp.view.user.RegisterFragment
+import com.example.peopledaliy.App
+import com.example.peopledaliy.R
+import com.example.peopledaliy.action.BroadAction
 import com.example.peopledaliy.mvp.base.model.BaseEntity
 import com.example.peopledaliy.mvp.base.view.BaseFragment
 import com.example.peopledaliy.mvp.contract.LoginContract
-import com.example.peopledaliy.mvp.presenter.LoginPresenter
-import com.example.peopledaliy.R
 import com.example.peopledaliy.mvp.di.DaggerLoginComponent
 import com.example.peopledaliy.mvp.di.LoginModules
 import com.example.peopledaliy.mvp.model.HttpCode
+import com.example.peopledaliy.mvp.model.entity.ResponseUserEntity
+import com.example.peopledaliy.mvp.model.entity.UserEntity
+import com.example.peopledaliy.mvp.presenter.LoginPresenter
 
 class LoginFragment : BaseFragment<LoginPresenter>(),LoginContract.ILoginView {
     var phone: EditText?=null
@@ -45,6 +49,14 @@ class LoginFragment : BaseFragment<LoginPresenter>(),LoginContract.ILoginView {
 
     override fun refreshView(entity: BaseEntity) {
         if (entity.status.equals("200")){
+            val responseUserEntity: ResponseUserEntity = entity as ResponseUserEntity
+            App.getInstance()!!.getDaoSession()!!.deleteAll(UserEntity::class.java)
+            App.getInstance()!!.getDaoSession()!!.insert(responseUserEntity.getValues())
+            val intent = Intent()
+            intent.action = BroadAction.UPDATEUSERACTION
+            intent.putExtra("userValues", responseUserEntity.getValues())
+            activity!!.sendBroadcast(intent)
+            activity!!.getSharedPreferences("user",Context.MODE_PRIVATE).edit().putBoolean("flag",true).commit()
             activity!!.finish()
         }
     }

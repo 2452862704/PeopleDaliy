@@ -5,7 +5,7 @@ import com.google.gson.Gson
 
 class ResponseUserEntity : BaseEntity() {
     var values: String? = null
-//    fun getValues(): UserEntity? {
-//        return if (values!!.isEmpty()) null else Gson().fromJson(values, UserEntity::class.java)
-//    }
+    fun getValues(): UserEntity? {
+        return if (values!!.isEmpty()) null else Gson().fromJson(values, UserEntity::class.java)
+    }
 }

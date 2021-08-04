@@ -9,12 +9,12 @@ import io.reactivex.Observable
 interface LREContract {
      interface ILREModel : IModel {
         //列表界面中无论多少接口全部合并请求方法
-        fun requestAll(vararg maps: MutableMap<String?, Any?>?): Observable<BaseEntity?>?
-        fun request_refresh_load(map: MutableMap<String?, Any?>?): Observable<BaseEntity?>?
+        fun requestAll(vararg maps: HashMap<String, Any>): Observable<BaseEntity>
+        fun request_refresh_load(map: MutableMap<String, Any>): Observable<BaseEntity>?
     }
 
     //LREView
-    interface ILREView : IView, ILREModel {
+    interface ILREView : IView {
         //全部数据请求返回方法
         fun refreshAll(entity: BaseEntity?)
 

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="71dp"
+    android:paddingTop="5dp"
+    android:paddingBottom="5dp">
+    <TextView
+        android:id="@+id/news4_title"
+        android:layout_width="match_parent"
+        android:layout_height="41dp"
+        android:maxLines="2"
+        android:ellipsize="end"
+        android:textSize="19sp"
+        android:text="sadasdsadasdsadasdsadasdsadasdsadasdsadasdsadasdsadasd"
+        android:textStyle="bold" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/news4_author"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:textSize="11sp"
+            android:layout_alignParentBottom="true"
+            android:text="sadasd"
+            android:textColor="@color/black1" />
+        <TextView
+            android:id="@+id/news4_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:textSize="11dp"
+            android:layout_marginLeft="9dp"
+            android:text="sadasd"
+            android:layout_alignParentBottom="true"
+            android:layout_toRightOf="@id/news4_author"
+            android:textColor="@color/black1" />
+    </RelativeLayout>
+</LinearLayout>
